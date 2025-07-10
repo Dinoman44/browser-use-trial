@@ -5,6 +5,10 @@ from browser_use import Agent, BrowserSession
 from browser_use.llm import ChatAzureOpenAI
 
 async def main():
+    bs = BrowserSession(
+        keep_alive=True,
+        downloads_path="/downloads"
+    )
     agent = Agent(
         task="Compare the price of gpt-4o and DeepSeek-V3",
         llm=ChatAzureOpenAI(model="gpt-4.1-agents"),
